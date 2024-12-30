@@ -4,6 +4,9 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 def index(request):
+    return render(request, 'index.html')
+
+def task2(request):
     return render(request, 'second_task/index.html')
 
 def fn_template(request):
