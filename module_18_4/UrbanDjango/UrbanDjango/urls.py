@@ -20,8 +20,8 @@ from django.contrib import admin
 from django.urls import path
 # from django.views.generic import TemplateView
 from task2.views import *
-from task3.views import *
-
+# from task3.views import *
+from task4.views import *
 
 
 urlpatterns = [
@@ -32,6 +32,6 @@ urlpatterns = [
     path('task2/cls', cls_template.as_view()),
     # path('cls/', TemplateView.as_view(template_name='class_templates.html'))
     path('platform/', platform),
-    path('platform/games', games),
+    path('platform/games', menu),
     path('platform/cart', cart),
 ]
