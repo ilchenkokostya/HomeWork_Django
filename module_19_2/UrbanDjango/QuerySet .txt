@@ -1,0 +1,26 @@
+py manage.py shell
+from task1.models import Buyer
+from task1.models import Game
+
+t = Buyer.objects.all()
+t.create(name='Ivan', balance= 20.4587, age= 17)
+t.create(name='Piter', balance= 150, age = 46)
+t.create(name = 'Vasya', balance= 189, age= 20)
+t.all()
+
+t2 = Game.objects.all()
+t2.create(title = 'Cyberpunk', cost =15, size = 8, description= 'Super', age_limited = True)
+t2.create(title= 'Mario', cost =0.8, size =1, description = 'Old game', age_limited = False)
+t2.create(title='Sonic', cost = 1000, size = 4.06, description = 'Very good', age_limited = True)
+t2.all()
+
+t2.get(id=1).buyer.set((t.get(id=2),))
+t2.get(id=2).buyer.set((t.get(id=1), t.get(id=2), t.get(id=3)))
+t2.get(id=3).buyer.set((t.get(id=2), t.get(id=3)))
+
+
+
+
+
+SELECT * FROM SQLITE_SEQUENCE;
+UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'task1_game_buyer';
