@@ -19,7 +19,7 @@ from django.urls import path
 from task1.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('', platform),
     path('games/', menu),
     path('cart/', cart),
