@@ -31,9 +31,10 @@ urlpatterns = [
     path('task2/', task2),
     path('task2/fn', fn_template),
     path('task2/cls', cls_template.as_view()),
-    # path('cls/', TemplateView.as_view(template_name='class_templates.html'))
     path('platform/', platform),
     path('platform/games', menu),
     path('platform/cart', cart),
-    path('task5/', sign_up_by_html)
+    path('task5_django/', sign_up_by_django),
+    path('task5_html/', sign_up_by_html)
+
 ]

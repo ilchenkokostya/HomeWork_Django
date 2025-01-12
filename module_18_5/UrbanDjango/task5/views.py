@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import UserRegister
+from django.http import HttpResponse
 users = ['user1', 'user2', 'user3']
 
 
@@ -7,6 +8,7 @@ def sign_up_by_django(request):
     info = {}
     if request.method == 'POST':
         form = UserRegister(request.POST)
+        info['form'] = form
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
@@ -22,9 +24,10 @@ def sign_up_by_django(request):
             else:
                 users.append(username)
                 info['message'] = f'Приветствуем, {username}!'
+
     else:
         form = UserRegister()
-        info['message'] = form
+        info['form'] = form
 
     return render(request, 'fifth_task/registration_page.html', info)
 
