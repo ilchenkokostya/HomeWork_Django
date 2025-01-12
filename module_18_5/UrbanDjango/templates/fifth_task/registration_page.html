@@ -61,15 +61,22 @@
         {% csrf_token %}
         {% if form %}
             <p><h3>(Django) Введите данные для регистрации:</h3></p>
-            {{ form }}
+<!--            {{ from }}-->
+             <div class="input-group">
+            {% for field in form %}
+                 <p>{{ field.label_tag }}
+                    {{ field.errors }}
+                     {{ field }}</p>
+             {% endfor %}
+             </div>
         {% else %}
             <p><h3>(HTML) Введите данные для регистрации:</h3></p>
             <label for="username">Ваш логин:</label>
             <input type="text" class="input-group" id="username" name="username" maxlength="30" required>
             <p><label for="password">Ваш пароль:</label>
-            <input type=password class="input-group" id="password" name="password" maxlength="8" required></p>
+            <input type=password class="input-group" id="password" name="password" minlength="8" required></p>
             <p><label for="repeat_password">Повторите пароль</label>
-            <input type="password" class="input-group" id="repeat_password" name="repeat_password" maxlength="8" required></p>
+            <input type="password" class="input-group" id="repeat_password" name="repeat_password" minlength="8" required></p>
             <p><label for="age">Введите свой возраст:</label>
             <input type="text" class="input-group" id="age" name="age" maxlength="3" required></p>
         {% endif %}
