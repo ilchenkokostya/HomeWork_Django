@@ -57,11 +57,13 @@
     <p style="color: brown;">{{ error }}</p>
     {% endif %}
     <form class="form" method="post">
-        <p><h3>Введите данные для регистрации:</h3></p>
+
         {% csrf_token %}
         {% if form %}
+            <p><h3>(Django) Введите данные для регистрации:</h3></p>
             {{ form }}
         {% else %}
+            <p><h3>(HTML) Введите данные для регистрации:</h3></p>
             <label for="username">Ваш логин:</label>
             <input type="text" class="input-group" id="username" name="username" maxlength="30" required>
             <p><label for="password">Ваш пароль:</label>

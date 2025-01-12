@@ -8,7 +8,6 @@ def sign_up_by_django(request):
     info = {}
     if request.method == 'POST':
         form = UserRegister(request.POST)
-        info['form'] = form
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
