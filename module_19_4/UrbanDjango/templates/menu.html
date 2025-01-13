@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title> Игровой сайт</title>
+
+</head>
+<body>
+    <header>
+        {% block page-name %}
+        {% endblock %}
+    </header>
+    <nav>
+        {% block menu %}
+        <p><a href="/">Главная</a></p>
+        <p><a href="/games">Магазин</a></p>
+        <p><a href="/cart">Корзина</a></p>
+        <p><a href="/registr">Регистрация</a></p>
+        {% endblock %}
+    </nav>
+
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+</html>
