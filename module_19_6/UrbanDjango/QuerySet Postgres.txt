@@ -20,6 +20,4 @@ t2.get(id=3).buyer.set((t.get(id=2), t.get(id=3)))
 
 
 
--------------------------------
-SELECT * FROM SQLITE_SEQUENCE;
-UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'task1_game_buyer';
+
