@@ -17,6 +17,23 @@ t2.get(id=1).buyer.set((t.get(id=2),))
 t2.get(id=2).buyer.set((t.get(id=1), t.get(id=2), t.get(id=3)))
 t2.get(id=3).buyer.set((t.get(id=2), t.get(id=3)))
 
+<< Update >>
+val = Buyer.objects.all()[1]
+val.name = "Oleg"
+val.save()
+
+<< Delete >>
+val = Buyer.objects.all()[1].delete()
+
+<<Filter>>
+Buyer.objects.filter(name='Oleg')
+like
+Buyer.objects.filter(name__contains='Oleg')
+Buyer.objects.filter(name__icontains='oleg').count()
+
+
+
+
 
 
 
